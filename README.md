@@ -1,8 +1,6 @@
 # Nuxt Launchpad
 
-![Nuxt](https://img.shields.io/badge/Nuxt-4-00DC82)
-![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue)
-![License](https://img.shields.io/github/license/KhatmullinBulat/nuxt-launchpad)
+[![MIT License][license-shield]][license-url]
 
 A foundational **Nuxt 4** project template designed for seamless integration with **FSD-like architecture** and efficient CRUD operations.
 
@@ -24,6 +22,8 @@ A foundational **Nuxt 4** project template designed for seamless integration wit
 - `widgets/` — page-level building blocks
 - `entities/` — business entities
 - `shared/` — global types, assets, composables, scripts
+
+---
 
 ## Usage Example
 
@@ -48,6 +48,8 @@ const ticketsApi = useApiFactory<
 export default ticketsApi;
 ```
 
+---
+
 ## Getting Started
 
 1. Clone the repository.
@@ -69,7 +71,26 @@ bun run dev
 # or yarn run dev
 ```
 
+---
+
+## Contributing
+
+If you have a suggestion that would make this project better, please fork the repo and create a [pull request](https://github.com/KhatmullinBulat/nuxt-launchpad/compare). You can also simply open an [issue](https://github.com/KhatmullinBulat/nuxt-launchpad/issues/new).
+
+To fix a bug or enhance an existing module, follow these steps:
+
+1. Fork the Repo
+2. Create a new branch (`git checkout -b improve-feature`)
+3. Make the appropriate changes in the files
+4. Add changes to reflect the changes made
+5. Commit your changes (`git commit -m 'Improve feature'`)
+6. Push to the branch (`git push origin improve-feature`)
+7. Create a Pull Request
+
 ## Inspired By
 
 - Feature-Sliced Design
 - Nuxt official patterns
+
+[license-shield]: https://img.shields.io/github/license/unktir/js-object-clock.svg?style=flat-square
+[license-url]: https://github.com/KhatmullinBulat/nuxt-launchpad/blob/main/LICENSE
