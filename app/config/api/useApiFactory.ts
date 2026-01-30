@@ -1,5 +1,5 @@
-import type { BaseApiTyped, PaginatedData } from "../types/api.types";
-import { useApi } from "./useApi";
+import type { BaseApiTyped, PaginatedData } from '../types/api.types'
+import { useApi } from './useApi'
 
 /**
  * Factory function to create a CRUD Api service.
@@ -18,50 +18,50 @@ import { useApi } from "./useApi";
  * ```
  */
 export function useApiFactory<T, K extends Record<string, any>, U extends Record<string, any>, I = void>(
-    endpoint: string
+  endpoint: string,
 ): BaseApiTyped<T, K, U, I> {
-    const { $api } = useNuxtApp()
+  const { $api } = useNuxtApp()
 
-    const api: BaseApiTyped<T, K, U, I> = {
-        endpoint,
+  const api: BaseApiTyped<T, K, U, I> = {
+    endpoint,
 
-        getOne(config) {
-            return useApi<I>(`${endpoint}/${config.id}/`, config.options)
-        },
+    getOne(config) {
+      return useApi<I>(`${endpoint}/${config.id}/`, config.options)
+    },
 
-        getAll(config) {
-            return useApi<PaginatedData<T>>(`${endpoint}/${config.additional_endpoint ? config.additional_endpoint : ''}`, {
-                query: config.params,
-                ...config.options
-            })
-        },
+    getAll(config) {
+      return useApi<PaginatedData<T>>(`${endpoint}/${config.additional_endpoint ? config.additional_endpoint : ''}`, {
+        query: config.params,
+        ...config.options,
+      })
+    },
 
-        getMore(params?: K, additional_endpoint: string = '') {
-            return $api(`${endpoint}/${additional_endpoint}/`, {
-                query: params
-            })
-        },
+    getMore(params?: K, additional_endpoint: string = '') {
+      return $api(`${endpoint}/${additional_endpoint}/`, {
+        query: params,
+      })
+    },
 
-        create(data) {
-            return $api(`${endpoint}/`, {
-                method: 'POST',
-                body: data
-            })
-        },
+    create(data) {
+      return $api(`${endpoint}/`, {
+        method: 'POST',
+        body: data,
+      })
+    },
 
-        update(id, data) {
-            return $api(`${endpoint}/${id}/`, {
-                method: 'PATCH',
-                body: data
-            })
-        },
+    update(id, data) {
+      return $api(`${endpoint}/${id}/`, {
+        method: 'PATCH',
+        body: data,
+      })
+    },
 
-        remove(id) {
-            return $api(`${endpoint}/${id}/`, {
-                method: 'DELETE'
-            })
-        },
-    }
+    remove(id) {
+      return $api(`${endpoint}/${id}/`, {
+        method: 'DELETE',
+      })
+    },
+  }
 
-    return api
+  return api
 }

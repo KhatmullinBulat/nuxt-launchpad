@@ -1,4 +1,4 @@
-import type { UseFetchOptions } from "#app";
+import type { UseFetchOptions } from '#app'
 
 /**
  * Wrapper around useFetch.
@@ -12,13 +12,13 @@ import type { UseFetchOptions } from "#app";
  * ```
  */
 export function useApi<T>(
-    url: string | (() => string),
-    options?: UseFetchOptions<T>,
+  url: string | (() => string),
+  options?: UseFetchOptions<T>,
 ) {
-    return useFetch(url, {
-        ...options,
-        $fetch: useNuxtApp().$api as typeof $fetch
-    })
+  return useFetch(url, {
+    ...options,
+    $fetch: useNuxtApp().$api as typeof $fetch,
+  })
 }
 
 export type UseApiReturnType<T> = ReturnType<typeof useApi<T>>

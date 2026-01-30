@@ -1,5 +1,5 @@
-import type { UseFetchOptions } from "#app"
-import type { UseApiReturnType } from "../api/useApi"
+import type { UseFetchOptions } from '#app'
+import type { UseApiReturnType } from '../api/useApi'
 
 /**
  * Base interface for ApiFactory.
@@ -11,42 +11,42 @@ import type { UseApiReturnType } from "../api/useApi"
  * @see {@link useApiFactory}
  */
 export interface BaseApiTyped<T, K, U, I> {
-    endpoint: string
+  endpoint: string
 
-    getOne: (config: {
-        id: number | string
-        options?: UseFetchOptions<I>
-    }) => UseApiReturnType<I>
+  getOne: (config: {
+    id: number | string
+    options?: UseFetchOptions<I>
+  }) => UseApiReturnType<I>
 
-    getAll: (config: {
-        params?: Ref<K> | K & PaginatedParams
-        options?: UseFetchOptions<PaginatedData<T>>
-        additional_endpoint?: string
-    }) => UseApiReturnType<PaginatedData<T>>
+  getAll: (config: {
+    params?: Ref<K> | K & PaginatedParams
+    options?: UseFetchOptions<PaginatedData<T>>
+    additional_endpoint?: string
+  }) => UseApiReturnType<PaginatedData<T>>
 
-    getMore: (
-        params?: K & PaginatedParams,
-        additional_endpoint?: string
-    ) => Promise<PaginatedData<T>>
+  getMore: (
+    params?: K & PaginatedParams,
+    additional_endpoint?: string,
+  ) => Promise<PaginatedData<T>>
 
-    create: (
-        data: U,
-    ) => Promise<I>
+  create: (
+    data: U,
+  ) => Promise<I>
 
-    update: (
-        id: number | string,
-        data: Partial<U>
-    ) => Promise<I>
+  update: (
+    id: number | string,
+    data: Partial<U>,
+  ) => Promise<I>
 
-    remove: (
-        id: number | string
-    ) => Promise<unknown>
+  remove: (
+    id: number | string,
+  ) => Promise<unknown>
 }
 
 // Pagination query parameters interface
 export interface PaginatedParams {
-    page?: number
-    per_page?: number | 'all'
+  page?: number
+  per_page?: number | 'all'
 }
 
 /**
@@ -54,10 +54,10 @@ export interface PaginatedParams {
  * @template T - Type of individual items in the results array
  */
 export interface PaginatedData<T> {
-    count: number
-    next: string | null
-    prev: string | null
-    has_next?: boolean
-    has_prev?: boolean
-    results: T[]
+  count: number
+  next: string | null
+  prev: string | null
+  has_next?: boolean
+  has_prev?: boolean
+  results: T[]
 }

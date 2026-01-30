@@ -1,16 +1,9 @@
+import antfu from '@antfu/eslint-config'
 // @ts-check
 import withNuxt from './.nuxt/eslint.config.mjs'
-import antfu from '@antfu/eslint-config'
 
 const antfuConfig = antfu({
-  stylistic: true,
-  isInEditor: false,
-  formatters: {
-    html: true,
-    css: true,
-    markdown: true
-  },
-  markdown: true,
+  ignores: ['nuxt.config.ts'],
   javascript: {
     overrides: {
       'unused-imports/no-unused-vars': ['error', {
@@ -37,7 +30,7 @@ const antfuConfig = antfu({
         multiline: { max: 1 },
       }],
       'vue/attributes-order': ['error', {
-        alphabetical: true
+        alphabetical: true,
       }],
       'vue/singleline-html-element-content-newline': ['error', {
         ignoreWhenNoAttributes: false,
@@ -48,5 +41,5 @@ const antfuConfig = antfu({
 })
 
 export default withNuxt(
-  antfuConfig
+  antfuConfig,
 )

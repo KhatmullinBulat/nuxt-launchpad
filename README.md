@@ -8,10 +8,11 @@ A foundational **Nuxt 4** project template designed for seamless integration wit
 
 ## Features
 
-- **FSD-ready**: Structured to support Feature-Sliced Design principles for scalable applications.  
-- **CRUD**: Includes `useApiFactory` composable for generating standardized CRUD Api services.  
-- **Type Safety**: Leverages TypeScript for robust type checking throughout the application.  
-- **Nuxt 4**: Built on the latest Nuxt framework features and best practices.  
+- **FSD-ready**: Structured to support Feature-Sliced Design principles for scalable applications.
+- **CRUD**: Includes `useApiFactory` composable for generating standardized CRUD Api services.
+- **ESLINT Antfu**: Сonfigured with `@antfu/eslint-config` and Nuxt ESLint integration for clean, consistent, and modern code style.
+- **Type Safety**: Leverages TypeScript for robust type checking throughout the application.
+- **Nuxt 4**: Built on the latest Nuxt framework features and best practices.
 
 ---
 
@@ -30,22 +31,22 @@ A foundational **Nuxt 4** project template designed for seamless integration wit
 ```ts
 // entities/api/tickets.ts
 import type {
-  TicketItem,
-  TicketFilters,
   CreateTicketForm,
-  TicketDetail
-} from "./types/ticket.types";
+  TicketDetail,
+  TicketFilters,
+  TicketItem,
+} from './types/ticket.types'
 
-import { useApiFactory } from "~/config/api/useApiFactory";
+import { useApiFactory } from '~/config/api/useApiFactory'
 
 const ticketsApi = useApiFactory<
   TicketItem,
   TicketFilters,
   CreateTicketForm,
   TicketDetail
->("/api/tickets");
+>('/api/tickets')
 
-export default ticketsApi;
+export default ticketsApi
 ```
 
 ---
@@ -58,17 +59,14 @@ export default ticketsApi;
 
 ```bash
 bun install
-# or npm install
-# or yarn install
 ```
+
 3. Configure your Api base URL (.env).
 
 4. Start the development server:
 
 ```bash
 bun run dev
-# or npm run dev
-# or yarn run dev
 ```
 
 ---
