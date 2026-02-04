@@ -34,15 +34,4 @@ export default defineNuxtConfig({
       },
     },
   },
-  eslint: {
-    config: {
-      standalone: false,
-      stylistic: true,
-      formatters: {
-        html: true,
-        css: true,
-        markdown: true,
-      },
-    },
-  },
 })

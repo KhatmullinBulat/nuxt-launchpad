@@ -1,9 +1,15 @@
 import antfu from '@antfu/eslint-config'
-// @ts-check
 import withNuxt from './.nuxt/eslint.config.mjs'
 
 const antfuConfig = antfu({
   ignores: ['nuxt.config.ts'],
+  standalone: false,
+  stylistic: true,
+  formatters: {
+    html: true,
+    css: true,
+    markdown: true,
+  },
   javascript: {
     overrides: {
       'unused-imports/no-unused-vars': ['error', {
@@ -26,8 +32,23 @@ const antfuConfig = antfu({
         registeredComponentsOnly: false,
       }],
       'vue/max-attributes-per-line': ['error', {
-        singleline: 1,
+        singleline: { max: 1 },
         multiline: { max: 1 },
+      }],
+      'vue/first-attribute-linebreak': ['error', {
+        singleline: 'beside',
+        multiline: 'below',
+      }],
+      'vue/html-closing-bracket-newline': ['error', {
+        singleline: 'never',
+        multiline: 'always',
+      }],
+      'vue/html-indent': ['error', 2, {
+        attribute: 1,
+        baseIndent: 1,
+        closeBracket: 0,
+        alignAttributesVertically: true,
+        ignores: [],
       }],
       'vue/attributes-order': ['error', {
         alphabetical: true,

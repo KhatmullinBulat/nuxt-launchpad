@@ -6,7 +6,7 @@
           Добро пожаловать в Nuxt Launchpad
         </h1>
         <p class="welcome-subtitle">
-          Ваша отправная точка для масштабируемых Nuxt приложений на основе FSD
+          Ваша отправная точка для масштабируемых Nuxt приложений
         </p>
       </header>
 
@@ -20,30 +20,12 @@
               <span class="icon">
                 ✅
               </span>
-              <span><strong>
-                FSD:
-              </strong> Поддержка принципов Feature-Sliced Design для модульности и
-                масштабируемости.</span>
-            </li>
-            <li class="feature-item">
-              <span class="icon">
-                ✅
-              </span>
-              <span><strong>
-                Готовый CRUD:
-              </strong> Встроенный composable <code>
-                useApiFactory
-              </code> для быстрого
-                создания API-сервисов.</span>
-            </li>
-            <li class="feature-item">
-              <span class="icon">
-                ✅
-              </span>
               <span>
                 <strong>
-                  TypeScript:
-                </strong> Полная типизация для повышения надежности и удобства разработки.
+                  FSD:
+                </strong>
+                Поддержка принципов Feature-Sliced Design для модульности и
+                масштабируемости.
               </span>
             </li>
             <li class="feature-item">
@@ -52,8 +34,27 @@
               </span>
               <span>
                 <strong>
-                  Nuxt 4:
-                </strong> Использование последних возможностей фреймворка Nuxt.
+                  Готовый CRUD:
+                </strong>
+                Встроенный composable
+                <code>
+                  useApiFactory
+                </code>
+                для быстрого создания API-сервисов.
+              </span>
+            </li>
+            <li class="feature-item">
+              <span class="icon">
+                ✅
+              </span>
+              <span>
+                <strong>
+                  ESLint Antfu:
+                </strong>
+                Жесткий стиль кода и автоматическое форматирование с помощью
+                <code>
+                  @antfu/eslint-config
+                </code>.
               </span>
             </li>
           </ul>
@@ -65,17 +66,20 @@
           </h3>
           <ol class="steps-list">
             <li>
-              Установите зависимости: <code>
+              Установите зависимости:
+              <code>
                 bun install
               </code>
             </li>
             <li>
-              Настройте URL API в файле <code>
+              Настройте URL API в файле
+              <code>
                 .env
               </code>
             </li>
             <li>
-              Запустите сервер разработки: <code>
+              Запустите сервер разработки:
+              <code>
                 bun run dev
               </code>
             </li>
@@ -85,15 +89,14 @@
 
       <footer class="welcome-footer">
         <p class="footer-text">
-          Узнайте больше в <a
-            href="https://github.com/KhatmullinBulat/nuxt-launchpad/blob/main/README.md"
-            target="_blank"
-          >README.md</a>.
+          Узнайте больше в
+          <a href="https://github.com/KhatmullinBulat/nuxt-launchpad/blob/main/README.md">
+            README.md
+          </a>.
         </p>
         <a
           class="repo-link"
           href="https://github.com/KhatmullinBulat/nuxt-launchpad"
-          target="_blank"
         >
           Перейти к репозиторию на GitHub
         </a>
