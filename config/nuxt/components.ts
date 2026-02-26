@@ -15,6 +15,12 @@ export const components: NuxtConfig['components'] = {
       extensions: ['.vue'],
     },
     {
+      path: '~/features',
+      pathPrefix: false,
+      pattern: '**/*.vue',
+      extensions: ['.vue'],
+    },
+    {
       path: '~/shared/ui',
       pathPrefix: false,
       pattern: '**/icons/*.vue',

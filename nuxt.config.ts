@@ -10,6 +10,7 @@ export default defineNuxtConfig({
       // %s will be replaced with the title of the specific page
       titleTemplate: '%s | Your Site',
       link: [
+        { rel: 'icon', href: '/favicon.ico' },
         { rel: 'icon', type: 'image/png', href: '/favicon.png' },
       ],
     },
@@ -29,6 +30,10 @@ export default defineNuxtConfig({
     tsConfig: {
       compilerOptions: {
         paths: {
+          '#entities/*': ['./app/entities/*'],
+          '#features/*': ['./app/features/*'],
+          '#widgets/*': ['./app/widgets/*'],
+          '#shared/*': ['./app/shared/*'],
           '@/assets/*': ['./app/shared/assets/*'],
         },
       },

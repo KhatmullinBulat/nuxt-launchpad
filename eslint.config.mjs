@@ -9,6 +9,8 @@ const antfuConfig = antfu({
     css: true,
     markdown: true,
   },
+  imports: false,
+  node: false,
   javascript: {
     overrides: {
       'unused-imports/no-unused-vars': ['error', {

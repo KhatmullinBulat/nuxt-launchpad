@@ -1,4 +1,12 @@
 {
+  "compilerOptions": {
+    "paths": {
+      "#entities/*": ["./app/entities/*"],
+      "#features/*": ["./app/features/*"],
+      "#widgets/*": ["./app/widgets/*"],
+      "#shared/*": ["./app/shared/*"]
+    }
+  },
   "references": [
     {
       "path": "./.nuxt/tsconfig.app.json"

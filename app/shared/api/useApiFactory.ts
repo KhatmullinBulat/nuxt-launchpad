@@ -17,7 +17,7 @@ import { useApi } from './useApi'
  * const ticketsApi = useApiFactory<TicketItem, TicketFilters, CreateTicketForm, TicketDetail>('/api/tickets')
  * ```
  */
-export function useApiFactory<T, K extends Record<string, any>, U extends Record<string, any>, I = void>(
+export function useApiFactory<T, K extends Record<string, unknown>, U extends Record<string, unknown>, I = void>(
   endpoint: string,
 ): BaseApiTyped<T, K, U, I> {
   const { $api } = useNuxtApp()
