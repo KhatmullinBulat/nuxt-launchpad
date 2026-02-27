@@ -1,7 +1,7 @@
 import tailwindcss from "@tailwindcss/vite"
 
 export default defineNuxtConfig({
-    css: ['~/app/shared/assets/css/main.css'],
+    css: ['~/shared/assets/css/main.css'],
     vite: {
         plugins: [
             tailwindcss(),
