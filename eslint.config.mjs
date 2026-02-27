@@ -2,6 +2,7 @@ import antfu from '@antfu/eslint-config'
 import withNuxt from './.nuxt/eslint.config.mjs'
 
 const antfuConfig = antfu({
+  ignores: ['./templates'],
   standalone: false,
   stylistic: true,
   formatters: {
